@@ -1,0 +1,33 @@
+div{
+    background-color: #f1f1f1;
+    position: relative;
+    width: 200px;
+    border-radius: 5px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+    img{
+        width: 85%;
+        position: absolute;
+        top: -50px;
+        left: 8%;
+        right: 0%;
+    }
+    h2{
+        color: black;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    a{
+        color: gray;
+        display: flex;
+        align-items: center;
+        mat-icon{
+            color: #d87d4a;
+        }
+    }
+}

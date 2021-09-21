@@ -1,0 +1,127 @@
+header{
+    background: black;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0px;
+    .Container{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            display: flex;
+            align-items: center;
+            mat-icon{
+                cursor: pointer;
+                margin-right: 10px;
+                animation: OpacityAnimation .5s both;
+                &:hover{
+                    animation: fadeIn .5s both;
+                }
+            }
+            nav{
+                display: none;
+            }
+        }
+    }
+    @media (min-width: 1208px){
+        .Container{
+            div{
+                .menuIcon{
+                    display: none;
+                }
+                mat-icon{
+                    margin-left: 40px;
+                }
+                nav{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 650px;
+                    div{
+                        a{
+                            text-transform: uppercase;
+                            font-size: .9rem;
+                            margin-inline: 10px;
+                            cursor: pointer;
+                            &:hover{
+                                animation: fadeIn .5s both;
+                            }
+                        }
+                        a.SignUp{
+                            color: #d87d4a;
+                            padding: 2px 7px;
+                            height: 16px;
+                            width: 56px;
+                            &:hover{
+                                animation: BorderAnimation .5s both;
+                            }
+                        }
+                        a.Login{
+                            border: 1px solid #d87d4a;
+                            padding: 2px 7px;
+                            &:hover{
+                                animation: BackgroundAnimation .5s both;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {color: white;}
+    100% {color: #d87d4a;}
+} 
+@keyframes BorderAnimation {
+    0% {border: none;}
+    100% {border: 1px solid #d87d4a;}
+} 
+@keyframes BackgroundAnimation {
+    0% {background: none;}
+    100% {background: #d87d4a;}
+} 
+@keyframes OpacityAnimation {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    } 
+@keyframes fadeInUp {
+        0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+        }
+        100% {
+        opacity: 1;
+        transform: none;
+        }
+        } 
+.MenuContainer{
+    background: white;
+    height: 320px;
+    width: 100%;
+    position: fixed;
+    top: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp .5s both;
+    a{
+        text-transform: uppercase;
+        margin-block: 5px;
+        letter-spacing: 2px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+    div{
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+        margin-top: 70px;
+        justify-content: space-around;
+    }
+}

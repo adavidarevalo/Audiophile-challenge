@@ -1,0 +1,35 @@
+.MainContainer{
+    background: #131313;
+    background-image: url('../../../../assets/images/shared/hero-img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    min-height: 85vh;
+    div{
+        color: white;
+        h3{
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 100;
+            opacity: .75;
+        }
+        h2{
+            font-size: 3.5rem;
+        }
+        p{
+            opacity: .75;
+            font-size: 15px;
+            line-height: 1.67;
+        }
+        button{
+            background-color: #ff7626;
+            font-size: 1.1rem;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+
+        }
+    }
+}

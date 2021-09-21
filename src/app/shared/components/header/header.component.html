@@ -1,0 +1,42 @@
+<header>
+<section class='Container'>
+    <div
+    (click)='changeMenu()'
+    >
+        <mat-icon class='menuIcon' *ngIf='!MenuHidden'>menu</mat-icon>
+        <mat-icon class='menuIcon' *ngIf='MenuHidden'>close</mat-icon>
+        <h2>audiophile</h2>
+    </div>
+    <div>
+        <nav>
+            <div>
+                <a>Home</a>
+                <a>Headphones</a>
+                <a>Speakers</a>
+                <a>Earphones</a>
+            </div>
+            <div>
+                <a class="SignUp">Sign Up</a>
+                <a class="Login">Login</a>
+            </div>
+
+        </nav>
+        <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+    </div>
+</section>
+</header>
+<section class='MenuContainer' *ngIf='MenuHidden'>
+    <a>Sign Up</a>
+    <a>Login</a>
+    <div>
+            <app-card-select-menu
+            [datafirst]='"headphones"'
+            ></app-card-select-menu>
+            <app-card-select-menu
+            [datafirst]='"speakers"'
+            ></app-card-select-menu>
+            <app-card-select-menu
+            [datafirst]='"earphones"'
+            ></app-card-select-menu>
+    </div>
+</section>
