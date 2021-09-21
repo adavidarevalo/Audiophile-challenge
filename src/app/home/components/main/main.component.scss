@@ -4,19 +4,30 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
-    min-height: 85vh;
+    min-height: 88vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     div{
         color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         h3{
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 100;
             opacity: .75;
+            margin: 0px;
         }
         h2{
-            font-size: 3.5rem;
+            font-size: 2rem;
+            text-align: center;
         }
         p{
+            text-align: center;
             opacity: .75;
             font-size: 15px;
             line-height: 1.67;
@@ -30,6 +41,22 @@
             padding: 10px 20px;
             border-radius: 3px;
 
+        }
+    }
+}
+.SpeakerContainer{
+    background-color: #d87d4a;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+    div{
+        overflow: hidden;
+        .circleContainer{
+            border: 1px solid white;
+            border-radius: 50%;
+            img{
+                width: 100%;
+            }
         }
     }
 }
