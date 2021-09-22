@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FetchApiProductService } from "../../../core/service/fetch-api-product.service"
-
+import { CartService } from "../../../core/service/cart.service"
 
 @Component({
   selector: 'app-earphones-name',
@@ -15,7 +15,8 @@ export class EarphonesNameComponent implements OnInit {
 
   constructor(
     private fetchApiProductService: FetchApiProductService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
@@ -49,4 +50,12 @@ export class EarphonesNameComponent implements OnInit {
     }
   }
 
+  sendProduct(){
+    this.cartService.addCart({
+      title: this.data.title,
+      name: this.data.name,
+      price: this.data.price,
+      count: this.count
+    })
+  }
 }

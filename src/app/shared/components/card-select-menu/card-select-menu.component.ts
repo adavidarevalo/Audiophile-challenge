@@ -16,7 +16,7 @@ export class CardSelectMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  cliskMenu(){
+  clickMenu(){
     this.closeMenuService.changeMenu()
   }
 

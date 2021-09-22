@@ -13,7 +13,7 @@ export class CloseMenuService {
   menuContainer$ = this.MenuContainer.asObservable();
 
   changeMenu(){
-    this.MenuBoolean = true
+    this.MenuBoolean = !this.MenuBoolean
     this.MenuContainer.next(this.MenuBoolean)
   } 
 }

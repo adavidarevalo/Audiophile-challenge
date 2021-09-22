@@ -1,0 +1,97 @@
+mat-nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.title{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ContainerItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .container{
+        img{
+            width: 80px;
+            margin-right: 10px;
+        }
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        .description{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+.payment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    h2{
+        color: #A8A8A8;
+    }
+    p{
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+.checkout{
+    margin: 0 auto;
+    background: #d87d4a;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: inherit;
+    letter-spacing: 5px;
+}
+.buyButtons{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    div{
+        background: #F1F1F1;
+        display: flex;
+        width: 30%;
+        height: 35px;
+        align-items: center;
+        margin-inline:10px ;
+        p{
+            opacity: 1;
+            font-weight: 500;
+        }
+        button{
+            height: 100%;
+            border: none;
+            background: none;
+            color: black;
+            cursor: pointer;
+        }
+        button:last-child{
+            color: #d87d4a;
+        }
+    }
+    button{
+        background: #d87d4a;
+        text-transform: uppercase;
+        color: white;
+        border: none;
+        padding-inline: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: .8rem;
+        cursor: pointer;
+    }
+    @media (min-width: 400px){
+        justify-content: end;
+    }
+}

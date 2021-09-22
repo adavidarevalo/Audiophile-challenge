@@ -10,14 +10,14 @@ import { CloseMenuService } from "../../../core/service/close-menu.service"
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  MenuHidden: boolean = false
+  MenuHidden: boolean = true
 
   constructor(
     private _bottomSheet: MatBottomSheet,
     private closeMenuService: CloseMenuService
   ) {
     this.closeMenuService.menuContainer$.subscribe(item=>{
-      this.MenuHidden = item
+      this.MenuHidden = false
     })
   }
 
