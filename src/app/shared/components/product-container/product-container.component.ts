@@ -10,6 +10,7 @@ export class ProductContainerComponent implements OnInit {
   @Input() nameContainer: string = '';
   @Input() title: string = '';
   @Input() description: string = '';
+  @Input() link: string = ""
   constructor() { }
 
   ngOnInit(): void {
