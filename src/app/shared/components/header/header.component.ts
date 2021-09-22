@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatBottomSheet} from '@angular/material/bottom-sheet';
 import { BottomSheetOverviewExampleSheetComponent } from '../bottom-sheet-overview-example-sheet/bottom-sheet-overview-example-sheet.component'
+import { CloseMenuService } from "../../../core/service/close-menu.service"
+
 
 @Component({
   selector: 'app-header',
@@ -11,8 +13,13 @@ export class HeaderComponent implements OnInit {
   MenuHidden: boolean = false
 
   constructor(
-    private _bottomSheet: MatBottomSheet
-  ) { }
+    private _bottomSheet: MatBottomSheet,
+    private closeMenuService: CloseMenuService
+  ) {
+    this.closeMenuService.menuContainer$.subscribe(item=>{
+      this.MenuHidden = item
+    })
+  }
 
   ngOnInit(): void {
   }

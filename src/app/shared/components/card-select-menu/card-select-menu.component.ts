@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { CloseMenuService } from "../../../core/service/close-menu.service"
 
 @Component({
   selector: 'app-card-select-menu',
@@ -8,9 +9,15 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class CardSelectMenuComponent implements OnInit {
   @Input() datafirst: any;
 
-  constructor() { }
+  constructor(
+    private closeMenuService: CloseMenuService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  cliskMenu(){
+    this.closeMenuService.changeMenu()
   }
 
 }

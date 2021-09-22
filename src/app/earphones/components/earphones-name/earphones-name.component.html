@@ -1,1 +1,67 @@
-<p>earphones-name works!</p>
+
+<app-spinner *ngIf="!data"></app-spinner>
+<section *ngIf="data">
+<div
+class="back"
+>
+    <a
+    routerLink="/headphones"
+    >Go Back</a>
+</div>
+<div class="headphonesMain">
+    <img src={{data.productImage}} alt={{data.name}}/>
+    <div>
+        <p 
+        *ngIf="data.newPruduct"
+        class="NewProduct"
+        >New Product</p>
+        <h2>{{data.title}}</h2>
+        <p>{{data.description}}</p>
+        <p
+        class="price"
+        >$ {{data.price}}</p>
+        <div class="buyButtons">
+            <div>
+                <button
+                (click)="addCount('si')"
+                >-</button>
+                <p>{{count}}</p>
+                <button
+                (click)="addCount('plus')"
+                >+</button>
+            </div>
+            <button>Add to cart</button>
+        </div>
+    </div>
+</div>
+<div class="features">
+    <h2>Features</h2>
+    <p>{{data.features}}</p>
+    <p>{{data.features2}}</p>
+</div>
+<div class="box">
+    <h2>In box</h2>
+    <p *ngFor="let item of data.box"><span>{{item.count}}</span>{{item.name}}</p>
+</div>
+<div class="galery">
+    <div>
+        <img src={{data.galery.firstImage}} alt="galery"/>
+        <img src={{data.galery.secondImage}} alt="galery"/>
+    </div>
+    <img 
+    class="mainPicture"
+    src={{data.galery.thirdImage}} alt="galery"/>
+</div>
+<div class='ProductsContainer'>
+    <app-card-select-menu
+    [datafirst]='"headphones"'
+    ></app-card-select-menu>
+    <app-card-select-menu
+    [datafirst]='"speakers"'
+    ></app-card-select-menu>
+    <app-card-select-menu
+    [datafirst]='"earphones"'
+    ></app-card-select-menu>
+</div>
+<app-banner></app-banner>
+</section>

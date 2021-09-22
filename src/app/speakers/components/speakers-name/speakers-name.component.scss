@@ -1,0 +1,175 @@
+h2{
+    font-size: 2.1rem;
+    width: 210px;
+    margin: 20px auto;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+img{
+    border-radius: 15px;
+}
+section{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 765px;
+    .back{
+        margin-block: 100px 26px;
+        a{
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+    }
+    .headphonesMain{
+        img{
+            width: 100%;
+        }
+        div{
+            .NewProduct{
+                text-align: center;
+                color: #d87d4a;
+                opacity: 1;
+                font-size: 14px;
+                font-weight: 400;
+                font-stretch: normal;
+                letter-spacing: 10px;
+                text-transform: uppercase;
+                margin-top: 35px;
+            }
+            p{
+                width: 80%;
+                margin: 0 auto;
+                font-size: 1rem;
+                opacity: .7;
+                font-weight: 100;
+                max-width: 500px;
+                text-align: justify;
+            }
+            .price{
+                opacity: 1;
+                font-size: 1.2rem;
+                font-weight: 500;
+                text-align: inherit;
+                margin-block: 30px;
+            
+            }
+            .buyButtons{
+                display: flex;
+                justify-content: space-between;
+                width: 80%;
+                margin: 0 auto;
+                flex-wrap: wrap;
+                div{
+                    background: #F1F1F1;
+                    display: flex;
+                    width: 30%;
+                    height: 35px;
+                    align-items: center;
+                    margin-inline:10px ;
+                    p{
+                        opacity: 1;
+                        font-weight: 500;
+                    }
+                    button{
+                        height: 100%;
+                        border: none;
+                        background: none;
+                        color: black;
+                        cursor: pointer;
+                    }
+                    button:last-child{
+                        color: #d87d4a;
+                    }
+                }
+                button{
+                    background: #d87d4a;
+                    text-transform: uppercase;
+                    color: white;
+                    border: none;
+                    padding-inline: 20px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    font-size: .8rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .features{
+        width: 80%;
+        margin: 70px auto;
+        p{
+            margin: 50px auto;
+            font-size: 1rem;
+            opacity: .7;
+            font-weight: 100;
+            text-align: center;
+            max-width: 500px;
+            text-align: justify;
+        }
+    }
+    .box{
+        width: 80%;
+        margin: 70px auto;
+        p{
+            font-size: 1rem;
+            opacity: .7;
+            span{
+                opacity: 1;
+                color: #d87d4a;
+                margin-right: 20px;
+            }
+        }
+    }
+    .galery{
+        img{
+            width: 100%;
+        }
+        div{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    @media (min-width: 665px){
+        h2{
+            font-size: 3rem;
+            width: 100%;
+        }
+        .headphonesMain{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .features{
+            width: 100%;
+            p{
+                margin: 50px 0px;
+                max-width: 100%;
+            }
+        }
+        .galery{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            .mainPicture{
+                height: 98%;
+            }
+        }
+    }
+}
+.ProductsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 765px;
+    margin: 0 auto;
+    app-card-select-menu{
+        margin-block: 90px 50px;
+        margin-inline: 10px;
+    }
+    @media (min-width: 665px){
+        justify-content: space-between;
+        margin-bottom: 90px;
+    }
+}
