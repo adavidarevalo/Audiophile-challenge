@@ -8,16 +8,28 @@ footer{
         display: flex;
         flex-direction: column;
         align-items: center;
+        img{
+            margin-block: 20px;
+        }
         nav{
             display: flex;
             flex-direction: column;
             align-items: center;
             a{
+                text-decoration: none;
+                color: white;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 font-weight: bolder;
                 margin: 10px;
                 font-size: .9rem;
+                cursor: pointer;
+                &:hover{
+                    animation: fadeIn .5s both;
+                }
+            }
+            a.active{
+                border-bottom: 1px solid #d87d4a;
             }
         }
         p{
@@ -36,6 +48,12 @@ footer{
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        a{
+            cursor: pointer;
+            &:hover{
+                opacity: .8;
+            }
+        }
     }
     @media (min-width: 800px){
         section{

@@ -9,6 +9,7 @@ div{
     align-items: center;
     justify-content: flex-end;
     padding-bottom: 15px;
+    margin-inline: 10px;
     img{
         width: 85%;
         position: absolute;
@@ -26,8 +27,18 @@ div{
         color: gray;
         display: flex;
         align-items: center;
+        text-decoration: none;
+        padding: 3px 10px;
         mat-icon{
             color: #d87d4a;
         }
+        &:hover{
+            background: #d87e4a38;
+            color: #d87d4a;
+            
+        }
+    }
+    a.active{
+        background: #D7D7D7;
     }
 }

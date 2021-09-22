@@ -1,27 +1,52 @@
 <header>
 <section class='Container'>
-    <div
-    (click)='changeMenu()'
-    >
-        <mat-icon class='menuIcon' *ngIf='!MenuHidden'>menu</mat-icon>
-        <mat-icon class='menuIcon' *ngIf='MenuHidden'>close</mat-icon>
-        <h2>audiophile</h2>
+    <div>
+        <mat-icon class='menuIcon' *ngIf='!MenuHidden' (click)='changeMenu()'>menu</mat-icon>
+        <mat-icon class='menuIcon' *ngIf='MenuHidden' (click)='changeMenu()'>close</mat-icon>
+        <a
+        routerLink='/'
+        class='LogoContainer'
+        >
+            <img src='./assets/images/logo.svg'/>
+        </a>
     </div>
     <div>
         <nav>
             <div>
-                <a>Home</a>
-                <a>Headphones</a>
-                <a>Speakers</a>
-                <a>Earphones</a>
+                <a
+                routerLink='/home'
+                routerLinkActive='active'
+                >Home</a>
+                <a
+                routerLink='/headphones'
+                routerLinkActive='active'
+                >Headphones</a>
+                <a
+                routerLink='/speakers'
+                routerLinkActive='active'
+                >Speakers</a>
+                <a
+                routerLink='/earphones'
+                routerLinkActive='active'
+                >Earphones</a>
             </div>
             <div>
-                <a class="SignUp">Sign Up</a>
-                <a class="Login">Login</a>
+                <a 
+                class="SignUp"
+                routerLink='/signUp'
+                >Sign Up</a>
+                <a 
+                class="Login"
+                routerLink='/login'
+                >Login</a>
             </div>
 
         </nav>
-        <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+        <button 
+        class='ButtonShopping'
+        mat-raised-button (click)="openBottomSheet()">
+           <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+        </button>
     </div>
 </section>
 </header>
@@ -39,4 +64,5 @@
             [datafirst]='"earphones"'
             ></app-card-select-menu>
     </div>
+    <app-menu-crad-animations></app-menu-crad-animations>
 </section>

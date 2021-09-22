@@ -4,8 +4,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
-    min-height: 88vh;
+    min-height: 92vh;
     width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,14 +26,16 @@
         h2{
             font-size: 2rem;
             text-align: center;
+            max-width: 500px;
         }
         p{
             text-align: center;
             opacity: .75;
             font-size: 15px;
             line-height: 1.67;
+            max-width: 330px;
         }
-        button{
+        a{
             background-color: #ff7626;
             font-size: 1.1rem;
             color: white;
@@ -40,22 +43,164 @@
             border: none;
             padding: 10px 20px;
             border-radius: 3px;
-
+            cursor: pointer;
+        }
+    }
+    @media (min-width: 665px){
+        div{
+            h2{
+                font-size: 4rem;
+                line-height: 55px;
+                margin-block: 25px;
+            }
         }
     }
 }
+section{
+    margin: 25px auto;
+    max-width: 765px;
+}
 .SpeakerContainer{
     background-color: #d87d4a;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-image: url('../../../../assets/images/circles.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    padding-block: 20px 35px;
     div{
-        overflow: hidden;
-        .circleContainer{
-            border: 1px solid white;
-            border-radius: 50%;
+        display: flex;
+        flex-direction: column;    
+        align-items: center;
+        img{
+            position: relative;
+            top: 90px;
+            width: 150px;
+            margin-bottom: 86px;
+        }
+        h2{
+            color: white;
+            text-align: center;
+            width: 149px;
+            margin: 0 auto;
+            font-size: 2rem;
+            margin-top: 33px;
+        }
+        p{
+            color: white;
+            width: 80%;
+            margin: 0 auto;
+            margin-block: 20px;
+            font-size: 1rem;
+            text-align: center;
+            line-height: 21px;
+            max-width: 400px;
+        }
+        a{
+            color: white;
+            background: black;
+            padding: 13px 20px;
+            font-size: 1.2rem;
+            font-weight: 200;
+            cursor: pointer;
+        }
+    }
+    @media (min-width: 665px){
+        div{
             img{
-                width: 100%;
+                width: 180px;
+            }
+            h2{
+                width: 274px;
+                font-size: 3.5rem;
+                line-height: 59px;
+            }
+        }
+    }
+}
+
+.ProductsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    app-card-select-menu{
+        margin-block: 90px 50px;
+        margin-inline: 10px;
+    }
+    @media (min-width: 665px){
+        justify-content: space-between;
+    }
+}
+.home-ZX7{
+    border-radius: 10px;
+    background-image: url('../../../../assets/images/home/desktop/image-speaker-zx7.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    box-sizing: inherit;
+    height: 320px;
+    div{
+        padding: 13% 4%;
+        h2{
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+        a{
+            text-transform: uppercase;
+            font-size: 1rem;
+            border: 1px solid black;
+            padding: 10px 15px;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+    }
+}
+.home-yx1{
+    width: 100%;
+    div{
+        min-height: 200px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        margin-bottom: 20px;
+        img{
+            width: 100%;
+            border-radius: 15px;
+        }
+        h2{
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+        a{
+            text-transform: uppercase;
+            font-size: 1rem;
+            border: 1px solid black;
+            padding: 10px 15px;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+    }
+    div:last-child{
+        padding: 0px 24px;
+        background: #F1F1F1;
+    }
+    @media (min-width: 665px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        div{
+            height: 100%;
+            img{
+                height: 100%;
             }
         }
     }

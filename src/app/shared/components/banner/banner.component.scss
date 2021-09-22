@@ -1,0 +1,46 @@
+section{
+    width: 100%;
+    max-width: 765px;
+    margin: 0 auto;
+    img{
+        width: 100%;
+        border-radius: 15px;
+    }
+    .ImageDesktop{
+        display: none;
+    }
+    h2{
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 35px;
+        font-size: 1.5rem;
+        margin-block: 25px;
+        span{
+            color: #d87d4a;
+        }
+    }
+    p{
+        width: 80%;
+        margin: 0 auto;
+        font-size: .8rem;
+        text-align: center;
+        font-weight: 100;
+        line-height: 20px;
+        margin-bottom: 50px;
+    }
+    @media (min-width: 450px){
+        .ImageMovil{
+            display: none;
+        }
+        .ImageDesktop{
+            display: block;
+        }
+        h2{
+            font-size: 2.3rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+}

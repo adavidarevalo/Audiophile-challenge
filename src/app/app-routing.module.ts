@@ -10,7 +10,32 @@ const routes: Routes = [
     children:[
       {
         path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
         loadChildren: ()=> import('./home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'headphones',
+        loadChildren: ()=> import('./headphones/headphones.module').then(m=> m.HeadphonesModule)
+      },
+      {
+        path: 'earphones',
+        loadChildren: ()=> import('./earphones/earphones.module').then(m=>m.EarphonesModule)
+      },
+      {
+        path: 'speakers',
+        loadChildren: () => import('./speakers/speakers.module').then(m=>m.SpeakersModule)
+      },
+      {
+        path: 'login',
+        loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+      },
+      {
+        path: 'signUp',
+        loadChildren: () => import('./sign-up/sign-up.module').then(M => M.SignUpModule)
       }
     ]
   }
