@@ -1,29 +1,46 @@
 <mat-nav-list>
   <div class="title">
-    <h2>Cart (1)</h2>
-    <button>Remove all</button>
+    <h2>Cart ({{count}})</h2>
+    <button
+    (click)='deleteProducts()'
+    >Remove all</button>
   </div>
-  <p *ngIf="!cartProduct">Empty Cart...</p>
+  <p *ngIf="cartProduct === []">Empty Cart...</p>
 
-      <div mat-list-item class="ContainerItem">
+      <div 
+      mat-list-item class="ContainerItem"
+      *ngFor='let item of cartProduct'
+      >
         <div class="container">
-        <img src="./assets/images/cart/xx59.jpg" alt="product"/>
+        <img src="./assets/images/cart/{{item.name}}.jpg" alt="product"/>
         <div class="description">
-          <h2>title</h2>
-          <p>Price</p>
+          <h2>{{item.title}}</h2>
+          <p>$ {{item.price}}</p>
         </div>
       </div>
       <div class="buyButtons">
       <div>
-        <button>-</button>
-        <p>1</p>
-        <button>+</button>
+        <button
+        (click)='plusProduct({
+          sign: "minus",
+          actual: item.count,
+          name: item.name
+        })'
+        >-</button>
+        <p>{{item.count}}</p>
+        <button
+        (click)='plusProduct({
+          sign: "plus",
+          actual: item.count,
+          name: item.name
+        })'
+        >+</button>
       </div>
     </div>
       </div>
     <div class="payment">
       <h2>Total</h2>
-      <p>$<span>10000</span></p>
+      <p>$<span>{{price}}</span></p>
     </div>
     <a
     routerLink="/"

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import {  ActivatedRoute, Params } from '@angular/router';
 import { FetchApiProductService } from "../../../core/service/fetch-api-product.service"
 import { CartService } from "../../../core/service/cart.service"
 
