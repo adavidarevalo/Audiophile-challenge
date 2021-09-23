@@ -19,7 +19,9 @@ export class HeaderComponent implements OnInit {
     private closeMenuService: CloseMenuService,
     private cartService: CartService
   ) {
+    this.count = 0
     this.cartService.cartContainer$.subscribe(item => {
+      this.count = 0
       item.map((element: any) => {
         this.count = this.count + element.count
       })

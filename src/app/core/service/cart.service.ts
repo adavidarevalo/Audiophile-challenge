@@ -18,7 +18,6 @@ export class CartService {
   }
 
   deleteAllProducts(){
-    console.log('delete')
     this.CartProduct = []
     this.CartContainer.next(this.CartProduct)
   }
@@ -37,10 +36,14 @@ export class CartService {
   }
 
   deleteProduct(element: string){
-    this.CartProduct.filter((item: any) => {
-      this.CartProduct = [item.name !== element]
+    if(this.CartProduct.length === 1){
+      return this.deleteAllProducts()
+    }
+
+    this.CartProduct.filter(function(i: any) {
+      return i.name !== element
     })
-    console.log(this.CartProduct)
+    this.CartContainer.next(this.CartProduct)
   }
 
 }

@@ -17,15 +17,19 @@ export class BottomSheetOverviewExampleSheetComponent implements OnInit {
     private _bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheetComponent>,
     private cartService: CartService
     ) {
-      this.count = this.cartService.countAllProducts()
       this.cartService.cartContainer$.subscribe((item: any)=>{
         this.cartProduct = item
-        item.map((element: any) => {
-          this.count = this.count + element.count
-        })
+        this.realCount()
         this.realPrice()
       })
     }
+  
+  realCount(){
+    this.count = 0
+    this.cartProduct.map((element: any) => {
+      this.count = this.count + element.count
+    })
+  }
 
   openLink(event: MouseEvent): void {
     this._bottomSheetRef.dismiss();
@@ -36,18 +40,22 @@ export class BottomSheetOverviewExampleSheetComponent implements OnInit {
   }
 
   realPrice(){
+    this.price = 0
     this.cartProduct.map((pricePlus: any) => {
       this.price = this.price + (pricePlus.count * pricePlus.price)
     })
   }
 
   deleteProducts(){
-    console.log('yes baby')
     this.cartService.deleteAllProducts()
   }
 
   plusProduct(operation: any){
+    this.price = 0
     let num = operation.actual
+    if(operation.actual === 0){
+      this.cartService.deleteProduct(operation.name)
+    }
     if(operation.sign === 'plus'){
       num = num + 1
     } else {
@@ -58,6 +66,7 @@ export class BottomSheetOverviewExampleSheetComponent implements OnInit {
       count: num
     })
     this.realPrice()
+    this.realCount()
   }
 
 }
