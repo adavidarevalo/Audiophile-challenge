@@ -40,5 +40,7 @@ export class HeaderComponent implements OnInit {
   openBottomSheet(): void {
     this._bottomSheet.open(BottomSheetOverviewExampleSheetComponent);
   }
-
+  clickMenu(){
+    this.closeMenuService.changeMenu()
+  }
 }

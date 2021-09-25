@@ -36,6 +36,7 @@
             max-width: 330px;
         }
         a{
+          text-decoration: none;
             background-color: #ff7626;
             font-size: 1.1rem;
             color: white;
@@ -72,7 +73,7 @@ section{
     padding-block: 20px 35px;
     div{
         display: flex;
-        flex-direction: column;    
+        flex-direction: column;
         align-items: center;
         img{
             position: relative;
@@ -99,6 +100,7 @@ section{
             max-width: 400px;
         }
         a{
+          text-decoration: none;
             color: white;
             background: black;
             padding: 13px 20px;
@@ -151,12 +153,14 @@ section{
             margin-bottom: 30px;
         }
         a{
+          text-decoration: none;
             text-transform: uppercase;
             font-size: 1rem;
             border: 1px solid black;
             padding: 10px 15px;
             letter-spacing: 2px;
             cursor: pointer;
+            color: black;
         }
     }
 }
@@ -181,12 +185,14 @@ section{
             margin-bottom: 30px;
         }
         a{
+          text-decoration: none;
             text-transform: uppercase;
             font-size: 1rem;
             border: 1px solid black;
             padding: 10px 15px;
             letter-spacing: 2px;
             cursor: pointer;
+            color: black;
         }
     }
     div:last-child{

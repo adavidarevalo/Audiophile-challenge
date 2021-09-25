@@ -13,8 +13,20 @@ export class CartService {
   cartContainer$ = this.CartContainer.asObservable()
 
   addCart(product: any){
-    this.CartProduct = [...this.CartProduct ,product]
-    this.CartContainer.next(this.CartProduct)
+    let InArray: boolean = false
+    this.CartProduct.map((item: any )=> {
+      product.name === item.name && (InArray = true)
+    })
+    if(InArray){
+      this.CartProduct.map((item: any) => {
+      item.name === product.name
+      ? item.count = item.count + product.count
+      : null
+    })
+    } else {
+      this.CartProduct = [...this.CartProduct ,product]
+      this.CartContainer.next(this.CartProduct)
+    }
   }
 
   deleteAllProducts(){
@@ -28,7 +40,7 @@ export class CartService {
       return this.deleteProduct(item.name)
     }
     this.CartProduct.map((product: any) => {
-      product.name === item.name 
+      product.name === item.name
       ? product.count = item.count
       : null
     })

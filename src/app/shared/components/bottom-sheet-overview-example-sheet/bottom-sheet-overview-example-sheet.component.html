@@ -1,49 +1,37 @@
 <mat-nav-list>
   <div class="title">
     <h2>Cart ({{count}})</h2>
-    <button
-    (click)='deleteProducts()'
-    >Remove all</button>
+    <button *ngIf="count !== 0" (click)='deleteProducts()'>Remove all</button>
   </div>
-  <p *ngIf="cartProduct === []">Empty Cart...</p>
+  <p *ngIf="count === 0">Empty Cart...</p>
 
-      <div 
-      mat-list-item class="ContainerItem"
-      *ngFor='let item of cartProduct'
-      >
-        <div class="container">
-        <img src="./assets/images/cart/{{item.name}}.jpg" alt="product"/>
-        <div class="description">
-          <h2>{{item.title}}</h2>
-          <p>$ {{item.price}}</p>
-        </div>
+  <div mat-list-item class="ContainerItem" *ngFor='let item of cartProduct'>
+    <div class="container">
+      <img src="./assets/images/cart/{{item.name}}.jpg" alt="product" />
+      <div class="description">
+        <h2>{{item.title}}</h2>
+        <p>$ {{item.price}}</p>
       </div>
-      <div class="buyButtons">
+    </div>
+    <div class="buyButtons">
       <div>
-        <button
-        (click)='plusProduct({
+        <button (click)='plusProduct({
           sign: "minus",
           actual: item.count,
           name: item.name
-        })'
-        >-</button>
+        })'>-</button>
         <p>{{item.count}}</p>
-        <button
-        (click)='plusProduct({
+        <button (click)='plusProduct({
           sign: "plus",
           actual: item.count,
           name: item.name
-        })'
-        >+</button>
+        })'>+</button>
       </div>
     </div>
-      </div>
-    <div class="payment">
-      <h2>Total</h2>
-      <p>$<span>{{price}}</span></p>
-    </div>
-    <a
-    routerLink="/"
-    class="checkout"
-    >checkout</a>
-  </mat-nav-list>
+  </div>
+  <div class="payment">
+    <h2>Total</h2>
+    <p>$<span>{{price}}</span></p>
+  </div>
+  <a *ngIf="price !== 0" routerLink="/" class="checkout">checkout</a>
+</mat-nav-list>

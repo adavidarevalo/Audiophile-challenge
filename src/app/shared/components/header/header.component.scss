@@ -94,19 +94,19 @@ header{
 @keyframes fadeIn {
     0% {color: white;}
     100% {color: #d87d4a;}
-} 
+}
 @keyframes BorderAnimation {
     0% {border: none;}
     100% {border: 1px solid #d87d4a;}
-} 
+}
 @keyframes BackgroundAnimation {
     0% {background: none;}
     100% {background: #d87d4a;}
-} 
+}
 @keyframes OpacityAnimation {
     0% {opacity: 0;}
     100% {opacity: 1;}
-    } 
+    }
 @keyframes fadeInUp {
         0% {
         opacity: 0;
@@ -116,7 +116,7 @@ header{
         opacity: 1;
         transform: none;
         }
-        } 
+        }
 .MenuContainer{
     background: white;
     min-height: 320px;
@@ -131,11 +131,13 @@ header{
     animation: fadeInUp .5s both;
     z-index: 1000;
     a{
-        text-transform: uppercase;
-        margin-block: 5px;
-        letter-spacing: 2px;
-        font-weight: 900;
-        cursor: pointer;
+      color: black;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin-block: 5px;
+      letter-spacing: 2px;
+      font-weight: 900;
+      cursor: pointer;
     }
     div{
         width: 80%;

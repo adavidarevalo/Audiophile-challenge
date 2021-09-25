@@ -3,6 +3,7 @@ mat-nav-list{
     flex-direction: column;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 }
 .title{
     width: 90%;
@@ -10,12 +11,26 @@ mat-nav-list{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
+    h2{
+      margin: 0px;
+    }
+    button{
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 1rem;
+          border: 1px solid black;
+          padding: 4px 7px;
+          cursor: pointer;
+          color: black;
+          background: none;
+    }
 }
 .ContainerItem{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
     .container{
         img{
             width: 80px;
@@ -61,13 +76,14 @@ mat-nav-list{
     div{
         background: #F1F1F1;
         display: flex;
-        width: 30%;
+        width: 100px;
         height: 35px;
         align-items: center;
         margin-inline:10px ;
         p{
             opacity: 1;
             font-weight: 500;
+            margin: 0px;
         }
         button{
             height: 100%;
