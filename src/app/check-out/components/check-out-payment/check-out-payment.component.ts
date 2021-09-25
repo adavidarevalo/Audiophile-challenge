@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-check-out-payment',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./check-out-payment.component.scss']
 })
 export class CheckOutPaymentComponent implements OnInit {
-  value = 'Clear me';
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
   constructor() { }
 
   ngOnInit(): void {
