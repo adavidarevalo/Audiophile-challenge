@@ -41,4 +41,11 @@ export class FetchAuthService {
     localStorage.removeItem('token');
     this.tokenContainer.next(this.token)
   }
+  userAuth(){
+    if(this.token){
+      this.http.get(`http://localhost:4000/api/auth`)
+    } else {
+
+    }
+  }
 }

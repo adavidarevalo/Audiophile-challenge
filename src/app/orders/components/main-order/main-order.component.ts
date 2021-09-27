@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchOrdersService } from "../../../core/service/fetch-orders.service"
+
 
 @Component({
   selector: 'app-main-order',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainOrderComponent implements OnInit {
   panelOpenState = false;
-  constructor() { }
+  orders: any = false
+  constructor(
+    private fetchOrdersService: FetchOrdersService
+  ) {
+    this.fetchAllOrders()
+   }
 
   ngOnInit(): void {
+  }
+
+  fetchAllOrders(){
+    this.fetchOrdersService.getAllOrders()
+    .subscribe(
+      item => {this.orders = item},
+      error => console.log(error)
+    )
+  console.log("asd ",this.orders)
   }
 
 }
