@@ -7,6 +7,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +21,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatListModule,
     MatTabsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatExpansionModule
   ],
   exports: [
     MatIconModule,
@@ -26,7 +33,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatListModule,
     MatTabsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatExpansionModule
   ]
 })
 export class MaterialModule { }

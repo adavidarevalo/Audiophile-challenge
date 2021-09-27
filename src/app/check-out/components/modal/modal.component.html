@@ -1,0 +1,28 @@
+<mat-dialog-content class="mat-typography">
+  <img src="./assets/images/checkmark.svg" alt="check">
+  <h2>Thank you for your order</h2>
+  <p>You will receive an email confirmation shortly.</p>
+  <div>
+    <div mat-list-item class="ContainerItem" *ngFor='let item of cartProduct'>
+        <div class="container">
+          <div class='containerDiv'>
+            <img src="./assets/images/cart/{{item.name}}.jpg" alt="product" />
+            <div class="description">
+              <h2>{{item.title}}</h2>
+            </div>
+          </div>
+          <div class="buyButtons">
+            <p>$ {{item.price}}</p>
+            <p>x{{item.count}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="total">
+      <h3>Grand total</h3>
+      <p>$ {{price}}</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="done">Done</button>
+</mat-dialog-actions>

@@ -1,6 +1,10 @@
-<section class="dontAccount">
+<section
+*ngIf='!Auth' 
+class="dontAccount">
     <p><span>Dear Customer</span>, our apologies.</p>
     <p>If you have an account please <a routerLink='/login'>Login</a> to proceed your purchase,</p>
     <h3>Don't have an account? <a routerLink='/signUp'>Sign Up</a> here.</h3>
 </section>
-<app-check-out-payment></app-check-out-payment>
+<app-check-out-payment
+*ngIf='Auth' 
+></app-check-out-payment>

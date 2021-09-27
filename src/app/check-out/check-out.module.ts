@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { CheckOutMainComponent } from './components/check-out-main/check-out-main.component';
 import { CheackOutRoutingModule } from './check-out-routing.module';
 import { CheckOutPaymentComponent } from './components/check-out-payment/check-out-payment.component'
-import { MaterialModule } from "../material/material.module"
+import { MaterialModule } from "../material/material.module";
+import { ModalComponent } from './components/modal/modal.component'
 
 @NgModule({
   declarations: [
     CheckOutMainComponent,
-    CheckOutPaymentComponent
+    CheckOutPaymentComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

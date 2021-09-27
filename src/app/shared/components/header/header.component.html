@@ -16,8 +16,26 @@
           <a routerLink='/earphones' routerLinkActive='active'>Earphones</a>
         </div>
         <div>
-          <a class="SignUp" routerLink='/signUp'>Sign Up</a>
-          <a class="Login" routerLink='/login'>Login</a>
+          <a 
+          class="SignUp" 
+          routerLink='/signUp'
+          *ngIf='!Auth'
+          >Sign Up</a>
+          <a 
+          class="Login" 
+          routerLink='/login'
+          *ngIf='!Auth'
+          >Login</a>
+          <a
+          class="SignUp"
+          routerLink='/orders' 
+          *ngIf='Auth'
+          >Orders</a>
+          <a
+          class="Login" 
+          *ngIf='Auth'
+          (click)='closeAccount()'
+          >Long Out</a>
         </div>
 
       </nav>
@@ -28,8 +46,26 @@
   </section>
 </header>
 <section class='MenuContainer' *ngIf='MenuHidden'>
-  <a (click)="clickMenu()" routerLink='/signUp'>Sign Up</a>
-  <a (click)="clickMenu()" routerLink='/login'>Login</a>
+  <a 
+  (click)="clickMenu()" 
+  routerLink='/signUp'
+  *ngIf='!Auth'
+  >Sign Up</a>
+  <a 
+  (click)="clickMenu()" 
+  routerLink='/login'
+  *ngIf='!Auth'
+  >Login</a>
+  <a
+  class="Login"
+  routerLink='/orders' 
+  *ngIf='Auth'
+  >Orders</a>
+  <a
+  class="Login" 
+  *ngIf='Auth'
+  (click)='closeAccount()'
+  >Long Out</a>
   <div>
     <app-card-select-menu [datafirst]='"headphones"'></app-card-select-menu>
     <app-card-select-menu [datafirst]='"speakers"'></app-card-select-menu>

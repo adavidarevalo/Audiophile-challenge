@@ -41,6 +41,10 @@
     <button
     (click)="sendUp()"
     >Login</button>
+    <p 
+    *ngIf='error'
+    class="error"
+    >{{error}}</p>
     <p>Don't have an account? <a routerLink='/login'>Sign Up Now</a></p>
 </div>
 </section>

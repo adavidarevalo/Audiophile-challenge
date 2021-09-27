@@ -1,19 +1,161 @@
 <section>
-    <p>Go Back</p>
+    <a
+    routerLink='/home'
+    >Go Back</a>
     <form>
-        <h3>Checkout</h3>
-        <p>Billing Details</p>
+        <h2>Checkout</h2>
         <div>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+          <h3>Billing Details</h3>
+          <div class="Container">
+            <mat-form-field class="example-full-width shortInput" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input type="name" matInput  placeholder="Name">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                  Please enter a valid email address
+                  Please enter a valid name
                 </mat-error>
                 <mat-error *ngIf="emailFormControl.hasError('required')">
-                  Email is <strong>required</strong>
+                  Name is <strong>required</strong>
                 </mat-error>
             </mat-form-field>
+            <mat-form-field class="example-full-width shortInput" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput  placeholder="Ex. pat@example.com">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width shortInput" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput  placeholder="Password">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid Password
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+      </div>
         </div>
+        <div>
+          <h3>SHIPPING INFO</h3>
+          <div class="Container">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Your Address</mat-label>
+                <input type="text" matInput  placeholder="Your Address">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid Your Address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Your Address is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width shortInput" appearance="fill">
+              <mat-label>ZIP Code</mat-label>
+              <input type="number" matInput  placeholder="ZIP Code">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid ZIP Code
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                ZIP Code is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width shortInput" appearance="fill">
+            <mat-label>City</mat-label>
+            <input type="text" matInput  placeholder="City">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid City
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              City is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width shortInput" appearance="fill">
+          <mat-label>Country</mat-label>
+          <input type="text" matInput  placeholder="Country">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid Country
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Country is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      </div>
+        <div>
+          <h3>PAYMENT DETAILS</h3>
+          <div class="Container">
+            <p>Payment Method</p>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value='1' (click)='seclectPay("money")'>e-Money</mat-radio-button>
+              <mat-radio-button value='2' (click)='seclectPay("pin")'>Cash On <span>Delivery</span></mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+          <div
+          *ngIf='methodPay === "money"' 
+          class="containerInformation">
+            <img src="./assets/images/cash.svg" alt="cash">
+            <p>
+              The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
+          </div>
+          <div 
+          *ngIf='methodPay === "pin"' 
+          class="containerInformation">
+            <mat-form-field class="example-full-width shortInput" appearance="fill">
+              <mat-label>e-Money Number</mat-label>
+              <input type="number" matInput  placeholder="e-Money Number">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid e-Money Number
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                e-Money Number is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width shortInput" appearance="fill">
+            <mat-label>e-Money PIN</mat-label>
+            <input type="number" matInput  placeholder="e-Money PIN">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid e-Money PIN
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              e-Money PIN is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+          </div>
+          <div class="title">
+            <h2>Cart ({{count}})</h2>
+          </div>
     </form>
+    <div mat-list-item class="ContainerItem" *ngFor='let item of cartProduct'>
+      <div class="container">
+        <img src="./assets/images/cart/{{item.name}}.jpg" alt="product" />
+        <div class="description">
+          <h2>{{item.title}}</h2>
+          <p>$ {{item.price}}</p>
+        </div>
+      </div>
+      <div class="buyButtons">
+        <div>
+          <button (click)='plusProduct({
+            sign: "minus",
+            actual: item.count,
+            name: item.name
+          })'>-</button>
+          <p>{{item.count}}</p>
+          <button (click)='plusProduct({
+            sign: "plus",
+            actual: item.count,
+            name: item.name
+          })'>+</button>
+        </div>
+      </div>
+    </div>
+    <div class="payment">
+      <h2>Total</h2>
+      <p>$<span>{{price}}</span></p>
+    </div>
+    <button class="buttonPay" (click)='openDialog()'>Continue & Pay</button>
 </section>

@@ -3,25 +3,40 @@
 </section>
 <section class="container">
   <div class='containerBackground'>
-    <div class="example-container">
+    <form 
+    [formGroup]="form"
+    class="example-container">
       <p>
         <mat-form-field appearance="legacy">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Placeholder">
+          <input 
+          matInput 
+          placeholder="Placeholder"
+          formControlName='email'
+          >
           <mat-icon matSuffix>email</mat-icon>
           <mat-hint>Email</mat-hint>
         </mat-form-field>
       </p>
       <p>
-        <mat-form-field appearance="legacy">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Placeholder">
-          <mat-icon matSuffix>lock</mat-icon>
-          <mat-hint>Password</mat-hint>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput 
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
       </p>
-    </div>
-    <button>Login</button>
+    </form>
+    <button
+    (click)="sendUp()"
+    >Login</button>
+    <p 
+    *ngIf='error'
+    class="error"
+    >{{error}}</p>
     <p>Don't have an account? <a routerLink='/signUp'>Sign Up Now</a></p>
     </div>
 </section>

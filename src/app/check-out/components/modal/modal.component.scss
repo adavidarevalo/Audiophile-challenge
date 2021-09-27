@@ -1,0 +1,67 @@
+h2{
+    font-size: 2rem;
+    margin-block: 15px;
+}
+mat-dialog-content{
+    p{
+        font-size: 1.1rem;
+    }
+    .container{
+        background: #F1F1F1;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .containerDiv{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            div{
+                h2{
+                    width: 225px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+            }
+        }
+        .buyButtons{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            p{
+                font-size: 1.2rem;
+                font-weight: 600;
+                opacity: .5;
+            }
+        }
+    }
+}
+.done{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #d87d4a;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: white ;
+    letter-spacing: 2px;
+}
+.total{
+    background: black;
+    padding: 10px 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    h3, p{
+        color: white;
+        text-transform: uppercase;
+        margin: 0px;
+    }
+    h3{
+        opacity: .6;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+}
