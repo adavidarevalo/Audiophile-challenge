@@ -12,9 +12,7 @@ export class AppComponent {
   ){}
   title = 'Audiophile-challenge';
   ngOnInit() {
-    console.log("yes")
     this.router.events.subscribe((evt) => {
-      console.log(evt)
         if (!(evt instanceof NavigationEnd)) {
             return;
         }

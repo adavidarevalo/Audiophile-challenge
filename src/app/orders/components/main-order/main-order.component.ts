@@ -22,10 +22,9 @@ export class MainOrderComponent implements OnInit {
   fetchAllOrders(){
     this.fetchOrdersService.getAllOrders()
     .subscribe(
-      item => {this.orders = item},
+      item => {this.orders = item, console.log(item)},
       error => console.log(error)
     )
-  console.log("asd ",this.orders)
   }
 
 }
