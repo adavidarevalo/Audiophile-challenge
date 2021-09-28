@@ -3,6 +3,8 @@ import {FormControl, Validators} from '@angular/forms';
 import { CartService } from '../../../core/service/cart.service'
 import {MatDialog} from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component'
+import { FetchOrdersService } from '../../../core/service/fetch-orders.service'
+
 
 @Component({
   selector: 'app-check-out-payment',
@@ -20,7 +22,8 @@ export class CheckOutPaymentComponent implements OnInit {
   ]);
   constructor(
     private cartService: CartService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private fetchOrdersService: FetchOrdersService
   ) {
     this.cartService.cartContainer$.subscribe((item: any)=>{
       this.cartProduct = item
@@ -77,8 +80,12 @@ export class CheckOutPaymentComponent implements OnInit {
   }
 
   openDialog() {
+    const Information = {
+      price: this.price,
+      product: this.cartProduct
+    }
+    this.fetchOrdersService.createPurchase(Information)
     const dialogRef = this.dialog.open(ModalComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

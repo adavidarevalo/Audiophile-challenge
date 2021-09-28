@@ -5,6 +5,7 @@ import { HttpClient } from "@angular/common/http"
   providedIn: 'root'
 })
 export class FetchOrdersService {
+  linkBackend: string = "https://audiophilebackend.herokuapp.com/api/projects"
 
   constructor(
     private http: HttpClient
@@ -12,10 +13,11 @@ export class FetchOrdersService {
 
 
   getAllOrders(){
-    return this.http.get(`http://localhost:4000/api/projects`)
+    console.log('order')
+    return this.http.get(this.linkBackend)
   }
   createPurchase(project: any){
-    return this.http.post("https://audiophilebackend.herokuapp.com/api/projects", project)
+    return this.http.post(this.linkBackend , project)
   }
 }
 

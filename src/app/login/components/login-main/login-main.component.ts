@@ -32,7 +32,7 @@ export class LoginMainComponent implements OnInit {
     })
   }
   sendUp(){
-    this.http.post("http://localhost:4000/api/auth", this.form.value) 
+    this.http.post("https://audiophilebackend.herokuapp.com/api/auth", this.form.value) 
     .subscribe(
       data => {
         this.fetchAuthService.setToken(data),
