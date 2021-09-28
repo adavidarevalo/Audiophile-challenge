@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"
+import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { BehaviorSubject } from "rxjs"
 
 
@@ -21,6 +21,7 @@ export class FetchAuthService {
       localStorage.setItem("token", element.token );
       this.token = element.token
     }
+    this.userAuth()
     this.tokenContainer.next(this.token)
   }
 
@@ -28,7 +29,9 @@ export class FetchAuthService {
     this.token = false
     if(window.localStorage.getItem('token')){
       this.token = localStorage.getItem('token')
+      this.userAuth()
     }
+    console.log(this.token)
     this.tokenContainer.next(this.token)
   }
 
@@ -42,10 +45,12 @@ export class FetchAuthService {
     this.tokenContainer.next(this.token)
   }
   userAuth(){
+    let headers
     if(this.token){
-      this.http.get(`http://localhost:4000/api/auth`)
-    } else {
-
+      headers = new HttpHeaders({
+        'x-auth-token': this.token
+      })
     }
+    return this.http.get('https://audiophilebackend.herokuapp.com/', {headers})
   }
 }

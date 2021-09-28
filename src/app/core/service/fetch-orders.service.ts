@@ -15,7 +15,7 @@ export class FetchOrdersService {
     return this.http.get(`http://localhost:4000/api/projects`)
   }
   createPurchase(project: any){
-    return this.http.post("http://localhost:4000/api/projects", project)
+    return this.http.post("https://audiophilebackend.herokuapp.com/api/projects", project)
   }
 }
 
