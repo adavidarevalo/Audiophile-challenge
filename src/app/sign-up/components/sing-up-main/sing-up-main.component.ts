@@ -34,7 +34,7 @@ export class SingUpMainComponent implements OnInit {
   }
 
   sendUp(){
-    this.http.post("http://localhost:4000/api/user", this.form.value) 
+    this.http.post("https://audiophilebackend.herokuapp.com/api/user", this.form.value) 
     .subscribe(
       data => {
         this.fetchAuthService.setToken(data),
