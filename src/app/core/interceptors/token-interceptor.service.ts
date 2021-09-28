@@ -25,15 +25,9 @@ export class TokenInterceptorService implements HttpInterceptor {
       const headers = new HttpHeaders({
         'x-auth-token': token
       })
-      console.log("xxx ", this.cartProduct)
-      if(this.cartProduct.length !== 0){
-        const params = new HttpParams(this.cartProduct)
-        console.log("params ",params)
-      } else {
-        this.reqClone = req.clone({
-          headers
-        })
-      }
+      this.reqClone = req.clone({
+        headers
+      })
       return next.handle(this.reqClone)
     } else {
       return next.handle(req)

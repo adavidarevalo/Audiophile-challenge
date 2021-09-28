@@ -85,6 +85,10 @@ export class CheckOutPaymentComponent implements OnInit {
       product: this.cartProduct
     }
     this.fetchOrdersService.createPurchase(Information)
+    .subscribe(
+      item => console.log(item),
+      error => console.log(error)
+    )
     const dialogRef = this.dialog.open(ModalComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
