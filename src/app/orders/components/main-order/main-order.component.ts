@@ -9,7 +9,7 @@ import { FetchOrdersService } from "../../../core/service/fetch-orders.service"
 })
 export class MainOrderComponent implements OnInit {
   panelOpenState = false;
-  orders: any = false
+  orders: any = []
   constructor(
     private fetchOrdersService: FetchOrdersService
   ) {

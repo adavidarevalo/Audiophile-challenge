@@ -10,12 +10,20 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div>
-        <img src='./assets/images/cart/xx59.jpg' alt='product'/>
+      <div 
+      *ngFor="let element of item.products"
+      class="container">
+        <img src='./assets/images/cart/{{element.name}}.jpg' alt='product'/>
         <div>
-            <h2>title</h2>
-            <p>Price <span>$ 4000</span></p>
-            <p>Quantity <span>x1</span></p>
+            <h2>{{element.title}}</h2>
+            <p>Price <span>$ {{element.price}}</span></p>
+            <p>Quantity <span>x{{element.count}}</span></p>
         </div>
       </div>
+      <div class="ContainerGeneral">
+        <h2>Grand total</h2>
+        <p>$ {{item.price}}</p>
+      </div>
+    </div>
     </mat-expansion-panel>
   </mat-accordion>
