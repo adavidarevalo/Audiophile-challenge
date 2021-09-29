@@ -86,7 +86,7 @@ export class CheckOutPaymentComponent implements OnInit {
     }
     this.fetchOrdersService.createPurchase(Information)
     .subscribe(
-      item => console.log(item),
+      item => this.cartProduct = [],
       error => console.log(error)
     )
     const dialogRef = this.dialog.open(ModalComponent);

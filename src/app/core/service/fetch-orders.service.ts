@@ -18,7 +18,6 @@ export class FetchOrdersService {
   }
   createPurchase(project: any){
     console.log(project)
-    debugger
     return this.http.post("https://audiophilebackend.herokuapp.com/api/projects" , project)
   }
 }

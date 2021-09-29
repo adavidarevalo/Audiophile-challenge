@@ -2,7 +2,12 @@
     <h2>Orders</h2>
 </section>
 <section class="container">
-    <h3>Previous Orders (0)</h3>
-    <p>No orders yet...</p>
-
+    <h3>Previous Orders ({{orders.length}})</h3>
+    <p *ngIf='orders.length !== 0 || orders.length !== false '>No orders yet...</p>
+    <div *ngIf='orders.length !== 0 || orders.length !== false '>
+        <app-order-container 
+        *ngFor='let item of orders'
+        [item]='item'
+        ></app-order-container>
+    </div>
 </section>
