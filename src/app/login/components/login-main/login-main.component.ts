@@ -12,7 +12,7 @@ export class LoginMainComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   token: any
   hide = true;
-  error = false
+  error: any = []
   constructor(
     private formBuilder: FormBuilder,
     private fetchAuthService: FetchAuthService,
@@ -40,6 +40,7 @@ export class LoginMainComponent implements OnInit {
       },
       error => {
         this.error = error.error.msg
+        console.log(error)
         setTimeout(() => {
           this.error= false
         }, 5000);      

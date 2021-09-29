@@ -1,3 +1,10 @@
+@keyframes slideIn {
+    to {
+        background: #d87d4a;
+        color: white;
+        border: 1px solid white;
+    }
+  }
 .MainContainer{
     background: #131313;
     background-image: url('../../../../assets/images/shared/hero-img.png');
@@ -45,6 +52,9 @@
             padding: 10px 20px;
             border-radius: 3px;
             cursor: pointer;
+            &:hover{
+                background-color: #ce5916;
+            }
         }
     }
     @media (min-width: 665px){
@@ -161,6 +171,9 @@ section{
             letter-spacing: 2px;
             cursor: pointer;
             color: black;
+            &:hover{
+                animation: slideIn 1s both;
+            }
         }
     }
 }
@@ -193,6 +206,9 @@ section{
             letter-spacing: 2px;
             cursor: pointer;
             color: black;
+            &:hover{
+                animation: slideIn 1s both;
+            }
         }
     }
     div:last-child{

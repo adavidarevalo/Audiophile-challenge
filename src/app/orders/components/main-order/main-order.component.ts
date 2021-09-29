@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchOrdersService } from "../../../core/service/fetch-orders.service"
-
+import { CloseMenuService } from "../../../core/service/close-menu.service"
 
 @Component({
   selector: 'app-main-order',
@@ -10,10 +10,13 @@ import { FetchOrdersService } from "../../../core/service/fetch-orders.service"
 export class MainOrderComponent implements OnInit {
   panelOpenState = false;
   orders: any = []
+  loading = true
   constructor(
-    private fetchOrdersService: FetchOrdersService
+    private fetchOrdersService: FetchOrdersService,
+    private closeMenuService: CloseMenuService
   ) {
-    this.fetchAllOrders()
+    this.fetchAllOrders(),
+    this.closeMenuService.changeMenu()
    }
 
   ngOnInit(): void {
@@ -22,7 +25,10 @@ export class MainOrderComponent implements OnInit {
   fetchAllOrders(){
     this.fetchOrdersService.getAllOrders()
     .subscribe(
-      (item: any) => {this.orders = item.project, console.log(item.project)},
+      (item: any) => {
+        this.orders = item.project
+        this.loading = false
+      },
       error => console.log(error)
     )
   }

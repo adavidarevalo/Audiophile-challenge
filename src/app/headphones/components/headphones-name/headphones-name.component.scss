@@ -8,6 +8,8 @@ h2{
 }
 img{
     border-radius: 15px;
+    min-height: 332px;
+    background: #F1F1F1;
 }
 section{
     width: 90%;
@@ -171,5 +173,22 @@ section{
     @media (min-width: 665px){
         justify-content: space-between;
         margin-bottom: 90px;
+    }
+}
+.SendMsg{
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 15px;
+    p{
+        background: #d87d4a;
+        color: white;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 280px;
+        padding: 10px;
+        font-size: 1rem;
+        text-align: center;
+        border-radius: 5px;
     }
 }

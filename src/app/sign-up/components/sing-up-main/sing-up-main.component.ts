@@ -13,7 +13,7 @@ export class SingUpMainComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   token: any
   hide = true;
-  error = false
+  error: any = []
   constructor(
     private formBuilder: FormBuilder,
     private fetchAuthService: FetchAuthService,
@@ -41,10 +41,10 @@ export class SingUpMainComponent implements OnInit {
         this.router.navigateByUrl('/')
       },
       error => {
-        this.error = error.error.msg
+        this.error = error.error.Errors
         setTimeout(() => {
           this.error= false
-        }, 5000);      
+        }, 6000);      
       }
     )
   }

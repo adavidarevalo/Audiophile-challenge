@@ -1,7 +1,12 @@
-<section class="titleContainer">
+<app-spinner *ngIf="loading"></app-spinner>
+<section 
+*ngIf="!loading"
+class="titleContainer">
     <h2>Orders</h2>
 </section>
-<section class="container">
+<section 
+*ngIf="!loading"
+class="container">
     <h3>Previous Orders ({{orders.length}})</h3>
     <p *ngIf='orders.length === 0'>No orders yet...</p>
     <div *ngIf='orders.length !== 0 '>

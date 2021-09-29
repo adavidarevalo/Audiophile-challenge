@@ -12,6 +12,7 @@ export class EarphonesNameComponent implements OnInit {
   name: string = ""
   data: any = false
   count: number = 1
+  addCart: boolean = false
 
   constructor(
     private fetchApiProductService: FetchApiProductService,
@@ -51,11 +52,15 @@ export class EarphonesNameComponent implements OnInit {
   }
 
   sendProduct(){
+    this.addCart = true
     this.cartService.addCart({
       title: this.data.title,
       name: this.data.name,
       price: this.data.price,
       count: this.count
     })
+    setTimeout(() => {
+      this.addCart = false
+    }, 5000);
   }
 }

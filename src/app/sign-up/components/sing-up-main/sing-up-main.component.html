@@ -40,11 +40,15 @@
         </form>
     <button
     (click)="sendUp()"
-    >Login</button>
-    <p 
+    >Sing Up</button>
+    <div 
     *ngIf='error'
     class="error"
-    >{{error}}</p>
-    <p>Don't have an account? <a routerLink='/login'>Sign Up Now</a></p>
+    >
+    <p 
+    *ngFor="let item of error"
+    >{{item.msg}}</p>
+    </div>
+    <p>Already have an account? <a routerLink='/login'>Login</a></p>
 </div>
 </section>

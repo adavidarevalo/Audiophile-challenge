@@ -43,6 +43,10 @@ mat-nav-list{
         .description{
             display: flex;
             flex-direction: column;
+            h2,p{
+                margin: 0px;
+                line-height: 28px;
+            }
         }
     }
 }

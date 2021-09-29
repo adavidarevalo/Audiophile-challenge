@@ -4,7 +4,7 @@ import { CartService } from '../../../core/service/cart.service'
 import {MatDialog} from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component'
 import { FetchOrdersService } from '../../../core/service/fetch-orders.service'
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-check-out-payment',
@@ -23,7 +23,8 @@ export class CheckOutPaymentComponent implements OnInit {
   constructor(
     private cartService: CartService,
     public dialog: MatDialog,
-    private fetchOrdersService: FetchOrdersService
+    private fetchOrdersService: FetchOrdersService,
+    public router: Router
   ) {
     this.cartService.cartContainer$.subscribe((item: any)=>{
       this.cartProduct = item
@@ -86,12 +87,16 @@ export class CheckOutPaymentComponent implements OnInit {
     }
     this.fetchOrdersService.createPurchase(Information)
     .subscribe(
-      item => this.cartProduct = [],
+      item => {
+        this.cartProduct = []
+      },
       error => console.log(error)
     )
     const dialogRef = this.dialog.open(ModalComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.router.navigateByUrl('/home');
+      this.cartService.deleteAllProducts()
     });
   }
 }

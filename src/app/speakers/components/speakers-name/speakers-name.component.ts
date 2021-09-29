@@ -11,6 +11,7 @@ import { CartService } from "../../../core/service/cart.service"
 export class SpeakersNameComponent implements OnInit {
   name: string = ""
   data: any = false
+  addCart: boolean = false
   count: number = 1
 
   constructor(
@@ -51,11 +52,15 @@ export class SpeakersNameComponent implements OnInit {
   }
 
   sendProduct(){
+    this.addCart = true
     this.cartService.addCart({
       title: this.data.title,
       name: this.data.name,
       price: this.data.price,
       count: this.count
     })
+    setTimeout(() => {
+      this.addCart = false
+    }, 5000);
   }
 }
