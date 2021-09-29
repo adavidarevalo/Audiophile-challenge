@@ -3,7 +3,7 @@
 </section>
 <section class="container">
     <h3>Previous Orders ({{orders.length}})</h3>
-    <p *ngIf='orders.length !== 0'>No orders yet...</p>
+    <p *ngIf='orders.length === 0'>No orders yet...</p>
     <div *ngIf='orders.length !== 0 '>
         <app-order-container 
         *ngFor='let item of orders'
