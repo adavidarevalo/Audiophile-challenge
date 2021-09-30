@@ -30,7 +30,6 @@ export class HeadphonesNameComponent implements OnInit {
   fetchDetails(info: string){
     this.fetchApiProductService.getElement(info)
     .subscribe(information => {
-      console.log("information ", information)
       this.data = information;
     })
   }

@@ -16,7 +16,6 @@ export class FetchAuthService {
   tokencontainer$ = this.tokenContainer.asObservable()
 
   setToken(element: any){
-    console.log(element.token)
     if(element.token){
       localStorage.setItem("token", element.token );
       this.token = element.token
@@ -31,7 +30,6 @@ export class FetchAuthService {
       this.token = localStorage.getItem('token')
       this.userAuth()
     }
-    console.log(this.token)
     this.tokenContainer.next(this.token)
   }
 

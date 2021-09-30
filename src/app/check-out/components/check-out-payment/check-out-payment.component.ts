@@ -95,7 +95,6 @@ export class CheckOutPaymentComponent implements OnInit {
 
   openDialog() {
     if(!this.form.valid){
-      console.log('xxx')
       this.error = true
       return 
     }
@@ -113,7 +112,6 @@ export class CheckOutPaymentComponent implements OnInit {
     )
     const dialogRef = this.dialog.open(ModalComponent);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
       this.router.navigateByUrl('/orders');
       this.cartService.deleteAllProducts()
     });

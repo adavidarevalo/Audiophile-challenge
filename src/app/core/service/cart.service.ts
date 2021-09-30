@@ -35,7 +35,6 @@ export class CartService {
   }
 
   changeCount(item: any){
-    console.log(item)
     if(item.count <= 0){
       return this.deleteProduct(item.name)
     }

@@ -13,11 +13,9 @@ export class FetchOrdersService {
 
 
   getAllOrders(){
-    console.log('order')
     return this.http.get(this.linkBackend)
   }
   createPurchase(project: any){
-    console.log(project)
     return this.http.post("https://audiophilebackend.herokuapp.com/api/projects" , project)
   }
 }
