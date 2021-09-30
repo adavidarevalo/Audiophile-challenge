@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
 import { CartService } from '../../../core/service/cart.service'
 import {MatDialog} from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component'
@@ -12,24 +12,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-out-payment.component.scss']
 })
 export class CheckOutPaymentComponent implements OnInit {
+  form: FormGroup = new FormGroup({});
   methodPay: any = false
   cartProduct: any = []
   price: any = 0
   count: any = 0
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+  error: boolean = false
+
   constructor(
     private cartService: CartService,
+    private formBuilder: FormBuilder,
     public dialog: MatDialog,
     private fetchOrdersService: FetchOrdersService,
     public router: Router
   ) {
+    this.buildForm()
     this.cartService.cartContainer$.subscribe((item: any)=>{
       this.cartProduct = item
       this.realCount()
       this.realPrice()
+    })
+  }
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      name: ["", [Validators.required]],
+      email: ["", [Validators.required, Validators.email]],
+      phone: ["", [Validators.required]],
+      //shipping
+      address: ["", [Validators.required]],
+      zip: ["", [Validators.required]],
+      city: ["", [Validators.required]],
+      country: ["", [Validators.required]],
     })
   }
 
@@ -81,6 +94,12 @@ export class CheckOutPaymentComponent implements OnInit {
   }
 
   openDialog() {
+    if(!this.form.valid){
+      console.log('xxx')
+      this.error = true
+      return 
+    }
+    this.error = false
     const Information = {
       price: this.price,
       product: this.cartProduct
@@ -95,7 +114,7 @@ export class CheckOutPaymentComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/orders');
       this.cartService.deleteAllProducts()
     });
   }

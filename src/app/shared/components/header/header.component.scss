@@ -1,3 +1,13 @@
+@keyframes fadeInDownBig {
+    0% {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0);
+    }
+    100% {
+    opacity: 1;
+    transform: none;
+    }
+    } 
 header{
     background: black;
     color: white;
@@ -8,6 +18,7 @@ header{
     z-index: 1000;
     height: 48px;
     .Container{
+        animation: fadeInDownBig 1s both;
         width: 80%;
         height: 100%;
         margin: 0 auto;

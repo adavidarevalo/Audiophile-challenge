@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    } 
+
 .title{
     width: 100%;
     background: black;
@@ -19,6 +24,7 @@
 form{
     width: 100%;
     max-width: 454px;
+    animation: fadeIn 1s both;
     p{
         mat-form-field{
             width: 100%;
@@ -63,6 +69,7 @@ form{
         font-size: 1rem;
         margin-top: 10px;
         max-width: 405px;
+        animation: fadeIn 1s both;
     }
     p{
         width: 90%;

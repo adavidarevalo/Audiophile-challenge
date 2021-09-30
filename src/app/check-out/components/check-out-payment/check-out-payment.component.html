@@ -2,40 +2,24 @@
     <a
     routerLink='/home'
     >Go Back</a>
-    <form>
+    <form
+    [formGroup]="form"
+    >
         <h2>Checkout</h2>
         <div>
           <h3>Billing Details</h3>
           <div class="Container">
             <mat-form-field class="example-full-width shortInput" appearance="fill">
                 <mat-label>Name</mat-label>
-                <input type="name" matInput  placeholder="Name">
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                  Please enter a valid name
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                  Name is <strong>required</strong>
-                </mat-error>
+                <input type="name" formControlName='name' matInput  placeholder="Name">
             </mat-form-field>
             <mat-form-field class="example-full-width shortInput" appearance="fill">
               <mat-label>Email</mat-label>
-              <input type="email" matInput  placeholder="Ex. pat@example.com">
-              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
+              <input type="email" matInput  placeholder="Ex. pat@example.com" formControlName='email'>
           </mat-form-field>
           <mat-form-field class="example-full-width shortInput" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input type="password" matInput  placeholder="Password">
-            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-              Please enter a valid Password
-            </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-              Password is <strong>required</strong>
-            </mat-error>
+            <mat-label>Phone Number</mat-label>
+            <input type="number" matInput  placeholder="Phone Number" formControlName='phone'>
         </mat-form-field>
       </div>
         </div>
@@ -44,43 +28,19 @@
           <div class="Container">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Your Address</mat-label>
-                <input type="text" matInput  placeholder="Your Address">
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                  Please enter a valid Your Address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                  Your Address is <strong>required</strong>
-                </mat-error>
+                <input type="text" matInput  placeholder="Your Address" formControlName='address'>
             </mat-form-field>
             <mat-form-field class="example-full-width shortInput" appearance="fill">
               <mat-label>ZIP Code</mat-label>
-              <input type="number" matInput  placeholder="ZIP Code">
-              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid ZIP Code
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                ZIP Code is <strong>required</strong>
-              </mat-error>
+              <input type="number" matInput  placeholder="ZIP Code" formControlName='zip'>
           </mat-form-field>
           <mat-form-field class="example-full-width shortInput" appearance="fill">
             <mat-label>City</mat-label>
-            <input type="text" matInput  placeholder="City">
-            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-              Please enter a valid City
-            </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-              City is <strong>required</strong>
-            </mat-error>
+            <input type="text" matInput  placeholder="City" formControlName='city'>
         </mat-form-field>
         <mat-form-field class="example-full-width shortInput" appearance="fill">
           <mat-label>Country</mat-label>
-          <input type="text" matInput  placeholder="Country">
-          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-            Please enter a valid Country
-          </mat-error>
-          <mat-error *ngIf="emailFormControl.hasError('required')">
-            Country is <strong>required</strong>
-          </mat-error>
+          <input type="text" matInput  placeholder="Country" formControlName='country'>
         </mat-form-field>
       </div>
       </div>
@@ -107,22 +67,10 @@
             <mat-form-field class="example-full-width shortInput" appearance="fill">
               <mat-label>e-Money Number</mat-label>
               <input type="number" matInput  placeholder="e-Money Number">
-              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid e-Money Number
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                e-Money Number is <strong>required</strong>
-              </mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width shortInput" appearance="fill">
             <mat-label>e-Money PIN</mat-label>
             <input type="number" matInput  placeholder="e-Money PIN">
-            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-              Please enter a valid e-Money PIN
-            </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-              e-Money PIN is <strong>required</strong>
-            </mat-error>
         </mat-form-field>
           </div>
           <div class="title">
@@ -157,5 +105,10 @@
       <h2>Total</h2>
       <p>$<span>{{price}}</span></p>
     </div>
-    <button class="buttonPay" (click)='openDialog()'>Continue & Pay</button>
+    <button 
+    class="buttonPay" 
+    (click)='openDialog()'>Continue & Pay</button>
+    <p 
+    class="errorMsg"
+    *ngIf='error'>All fields are required</p>
 </section>

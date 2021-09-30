@@ -1,3 +1,7 @@
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    } 
 .titleContainer{
     width: 100%;
     background: black;
@@ -20,6 +24,7 @@
     width: 100%;
     max-width: 765px;
     margin: 50px auto;
+    animation: fadeIn 1s both;
     h3{
         font-size: 1.4rem;
     }

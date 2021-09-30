@@ -4,6 +4,7 @@ import { BottomSheetOverviewExampleSheetComponent } from '../bottom-sheet-overvi
 import { CloseMenuService } from "../../../core/service/close-menu.service"
 import { CartService } from '../../../core/service/cart.service'
 import { FetchAuthService } from '../../../core/service/fetch-auth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,8 @@ export class HeaderComponent implements OnInit {
     private _bottomSheet: MatBottomSheet,
     private closeMenuService: CloseMenuService,
     private cartService: CartService,
-    private fetchAuthService: FetchAuthService
+    private fetchAuthService: FetchAuthService,
+    public router: Router
   ) {
     this.count = 0
     this.cartService.cartContainer$.subscribe(item => {
@@ -53,5 +55,6 @@ export class HeaderComponent implements OnInit {
   closeAccount(){
     this.fetchAuthService.closeSession()
     this.Auth = false
+    this.router.navigateByUrl('/home');
   }
 }

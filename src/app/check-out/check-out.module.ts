@@ -5,6 +5,7 @@ import { CheackOutRoutingModule } from './check-out-routing.module';
 import { CheckOutPaymentComponent } from './components/check-out-payment/check-out-payment.component'
 import { MaterialModule } from "../material/material.module";
 import { ModalComponent } from './components/modal/modal.component'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ModalComponent } from './components/modal/modal.component'
   imports: [
     CommonModule,
     CheackOutRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class CheckOutModule { }
